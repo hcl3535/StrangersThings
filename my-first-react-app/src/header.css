@@ -1,0 +1,17 @@
+.header{
+    background-color: turquoise;
+    padding: 25px;
+}
+.centered{
+    text-align: center;
+}
+.left {
+    float: left;
+    text-align: center;
+    padding: 2px 10px;
+}
+.right {
+    float: right;
+    text-align: center;
+    
+}
