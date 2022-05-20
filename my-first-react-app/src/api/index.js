@@ -143,4 +143,26 @@ export async function loginUser(username, password) {
     }
   }
 
-  
+
+  export async function sendMessage (token, message, ID) {
+    try{
+      let results = await fetch(`${baseURL}/2202-ftb-et-web-pt/posts/${ID}/messages` , {
+        method: "POST",
+        headers: {
+          "content-Type": "application/json",
+          "authorization" : "bearer " + token ,
+        },
+        body: JSON.stringify({
+          message: {
+            content: message
+          }
+      })  
+    })
+    let data = await results.json();
+    console.log(data)
+  } catch (error) {
+
+    }finally{
+
+    }
+  }  

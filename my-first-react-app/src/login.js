@@ -1,4 +1,6 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import {browserRouter, Route, Link} from 'react-router-dom'
 import { loginUser, makeHeader } from "./api";
 import "./login.css"
@@ -16,6 +18,8 @@ const {username, setUsername, password, setPassword, loginResults, setLoginResul
           localStorage.setItem("token", results.data.token)
           setLoggedIn(true)
           makeHeader(results.data.token)
+          return 
+          
         }
         console.log(username)
         console.log(password)

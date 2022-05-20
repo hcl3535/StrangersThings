@@ -15,7 +15,6 @@ const Header = (props) => {
     setToken("")
     localStorage.removeItem("token")
     setLoggedIn(false)
-    debugger
     makeHeader(null)
   }
 
@@ -41,16 +40,15 @@ const Header = (props) => {
         <div className="header">
           <span>
             <h4>{userTag}</h4>
-            {loggedIn ? <button className="right" onClick={handleSignOut}>sign out</button> : null }
+            {loggedIn ? <Link to="/"><button className="right" onClick={handleSignOut}>sign out</button></Link> : null }
             {loggedIn ? null : <Link className="right" to="/login">Log In</Link> } 
             {loggedIn ? null : <Link className="right" to="/SignUp">Sign Up</Link> }
           </span>      
           <div className="centered">Stranger's Things</div>
           <span>
             <Link className="left" to="/">home</Link>
-            { loggedIn ? <Link className="left" to="/mail">mail</Link> : null }
+            { loggedIn ? <Link className="left" to="/mail">profile</Link> : null }
             { loggedIn ? <Link className="left" to="/createPost">create post</Link> : null }
-            <button className="left" onClick={handleTest}>test</button>
           </span>
         </div>
     )
